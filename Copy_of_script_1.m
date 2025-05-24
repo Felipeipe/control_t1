@@ -11,13 +11,13 @@ Z_b = tf([L_b R_b],1);
 %% Planta batería Int
 den_b_int = Z_b;
 sys_b_int = 1/den_b_int;
-rltool(sys_b_int)
+% rltool(sys_b_int)
 
 %% Planta Batería Ext
 sys_b_ext = tf(R_L,[C_L*R_L 1]);
-rltool(sys_b_ext)
+% rltool(sys_b_ext)
 
 %% Planta Full Celd
 den_fc = Z_fc;
 sys_fc = 1/den_fc;
-rltool(sys_fc)
+% rltool(sys_fc)
