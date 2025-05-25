@@ -51,8 +51,8 @@ bat_awu_den = [k_bat_inf zero_battery_current*k_bat_inf];
 k_cell_inf = K_cell_current;
 
 cell_awu_num = -zero_cell_current;
-cell_awu_den = [k_cell_inf zero_cell_current*k_bat_inf];
+cell_awu_den = [k_cell_inf zero_cell_current*k_cell_inf];
 
 
-cell_awu = tf(cell_awu_num,cell_awu_den)
-bat_awu = tf(bat_awu_num, bat_awu_den)
+cell_awu = tf(cell_awu_num,cell_awu_den);
+bat_awu = tf(bat_awu_num, bat_awu_den);
