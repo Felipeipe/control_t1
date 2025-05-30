@@ -1,9 +1,16 @@
 \section{Simulación}
 A continuación se mostrarán las diferentes simulaciones propuestas por el enunciado, junto con el análisis de los resultados obtenidos. Es importante mencionar que la simulación se retrasó en 100 [ms] respecto a los tiempos que se solicitaron. Esto fue decidido para que la simulación alcance el estado estacionario antes de que comiencen las perturbaciones.
 
+En todas las figuras que se mostrarán a continuación, las lineas en \textcolor{blue}{azul}
+corresponden a la celda de combustible, en \textcolor{yellow}{amarillo} la
+batería y la carga en \textcolor{orange}{naranjo}.
+
 %==================================== e) ====================================
 \subsection{\textit{Escenario con tres perturbaciones de carga.}}
 %==================================== e) ====================================
+
+En primer lugar se simuló cambios en la carga siguiendo la tabla que se 
+muestra a continuación, 
 
 \begin{table}[H]
 \centering
@@ -23,6 +30,13 @@ $8 \leq t < 12$ (seg.) & La carga se desconecta, $R_L \rightarrow \infty$ \\
 \caption{Variación de la resistencia de carga durante la simulación.}
 \label{tab:e}
 \end{table}
+
+Se puede observar en la figura (\ref{fig:e_corrientes}) como el sistema reacciona
+frente a los cambios en la carga, en los segundos 2, 5 y 8 aproximadamente.
+Además es posible notar que la batería responden más rápido frente a perturbaciones,
+lo que cohincide con la teoría de control, dado que es el controlador con la
+frecuencia natural más alta, 1400 [rad/s]. También, se puede obsevar como la corriente de la celda de combustible
+sigue la corriente de carga. 
 
 \begin{figure}[H]
     \centering
