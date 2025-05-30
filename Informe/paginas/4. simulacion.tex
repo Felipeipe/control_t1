@@ -33,8 +33,8 @@ $8 \leq t < 12$ (seg.) & La carga se desconecta, $R_L \rightarrow \infty$ \\
 
 Se puede observar en la figura (\ref{fig:e_corrientes}) como el sistema reacciona
 frente a los cambios en la carga, en los segundos 2, 5 y 8 aproximadamente.
-Además es posible notar que la batería responden más rápido frente a perturbaciones,
-lo que cohincide con la teoría de control, dado que es el controlador con la
+Además es posible notar que la batería responde más rápido frente a perturbaciones,
+lo que coincide con la teoría de control, dado que es el controlador con la
 frecuencia natural más alta, 1400 [rad/s]. También, se puede obsevar como la corriente de la celda de combustible
 sigue la corriente de carga. 
 
@@ -95,6 +95,10 @@ sigue la corriente de carga.
 \label{fig:f_corriente_4.98-5.1}
 \end{figure}
 
+Se puede notar que la batería no suministraba corriente antes de la perturbación. 
+Después de ocurrir el cambio de resistencia $R_L$ las corrientes de la \textit{fuel cell} y de
+la batería aumentan para poder compensar con la caida de tensión que inevitablemente ocurre. 
+Luego de dicha perturbación la corriente usada por la batería converge a cero. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/f_maximosobrepaso.png}
