@@ -36,7 +36,9 @@ frente a los cambios en la carga, en los segundos 2, 5 y 8 aproximadamente.
 Además es posible notar que la batería responde más rápido frente a perturbaciones,
 lo que coincide con la teoría de control, dado que es el controlador con la
 frecuencia natural más alta, 1400 [rad/s]. También, se puede obsevar como la corriente de la celda de combustible
-sigue la corriente de carga. 
+sigue la corriente de carga, sin embargo es muchisimo más lento que la batería, 4 [rad/s]. Por otro lado,
+al momento de la desconexión de la carga se puede observar una saturación de corriente por parte
+de la batería, dado que intenta compensar la corriente que sigue entregando la celda de combustible.
 
 \begin{figure}[H]
     \centering
@@ -45,12 +47,13 @@ sigue la corriente de carga.
     \label{fig:e_corrientes}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{img/simulación/e_voltajes_zoom.png}
-    \caption{Voltajes con zoom.}
-    \label{fig:e_voltajes_zoom}
-\end{figure}
+En la figura (\ref{fig:e_voltajes}) se puede observar los voltajes involucrados
+en el sistema. Es posible notar que la carga se encuentra prácticamente en 
+los 250 [V] durante toda la simulación por lo que el sistema MIMO cumple con 
+su propósito. Por otro lado dado que los voltajes tanto de la celda de 
+combustible y la batería son actuadores estos cambian de manera prácticamente
+instantanea frente a los cambios producidos en la carga, pero es posible notar
+que la celda de combustible se satura en 450 [V].
 
 \begin{figure}[H]
     \centering
@@ -58,6 +61,19 @@ sigue la corriente de carga.
     \caption{Voltajes del sistema.}
     \label{fig:e_voltajes}
 \end{figure}
+
+Luego en la figura (\ref{fig:e_voltajes_zoom}) se puede observar que el 
+voltaje de la celda de combustible se satura en -400 y 400 [V] cuando se
+desconecta la carga.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/e_voltajes_zoom.png}
+    \caption{Voltajes con zoom.}
+    \label{fig:e_voltajes_zoom}
+\end{figure}
+
+
 
 %==================================== f) ====================================
 \subsection{\textit{Simulación con dos cambios en la carga}}
