@@ -1,0 +1,165 @@
+\section{Simulación}
+A continuación se mostrarán las diferentes simulaciones propuestas por el enunciado, junto con el análisis de los resultados obtenidos. Es importante mencionar que la simulación se retrasó en 100 [ms] respecto a los tiempos que se solicitaron. Esto fue decidido para que la simulación alcance el estado estacionario antes de que comiencen las perturbaciones.
+
+%==================================== e) ====================================
+\subsection{\textit{Escenario con tres perturbaciones de carga.}}
+%==================================== e) ====================================
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Inicialización del sistema} & \textbf{Resistencia de carga} \\
+\hline
+$0 \leq t < 2$ (seg.) & $R_L = 10\,\Omega$ \\
+\hline
+$2 \leq t < 5$ (seg.) & $R_L = 3.33\,\Omega$ \\
+\hline
+$5 \leq t < 8$ (seg.) & $R_L = 2.3\,\Omega$ \\
+\hline
+$8 \leq t < 12$ (seg.) & La carga se desconecta, $R_L \rightarrow \infty$ \\
+\hline
+\end{tabular}
+\caption{Variación de la resistencia de carga durante la simulación.}
+\label{tab:e}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/e_corrientes.png}
+    \caption{Corrientes del sistema.}
+    \label{fig:e_corrientes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/e_voltajes_zoom.png}
+    \caption{Voltajes con zoom.}
+    \label{fig:e_voltajes_zoom}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/e_voltajes.png}
+    \caption{Voltajes del sistema.}
+    \label{fig:e_voltajes}
+\end{figure}
+
+%==================================== f) ====================================
+\subsection{\textit{Simulación con dos cambios en la carga}}
+%==================================== f) ====================================
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Inicialización del sistema} & \textbf{Resistencia de carga} \\
+    \hline
+    $0 \leq t < 2$ (seg.) & $R_L = 10\,\Omega$ \\
+    \hline
+    $2 \leq t < 5$ (seg.) & Resistencia de carga total de $R_L = 2.3\,\Omega$ \\
+    \hline
+    $5 \leq t < 8$ (seg.) & La carga total se desconecta y $R_L \rightarrow \infty$ \\
+    \hline
+\end{tabular}
+\caption{Escenario con dos perturbaciones de carga.}
+\label{tab:f}
+\end{table}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/f_corriente_1.98-2.1.png}
+    \caption{Corriente entre 1.98 y 2.1 segundos.}
+    \label{fig:f_corriente_1.98-2.1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/f_corriente_4.98-5.1.png}
+    \caption{Corriente entre 4.98 y 5.1 segundos.}
+\label{fig:f_corriente_4.98-5.1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/f_maximosobrepaso.png}
+    \caption{Máximo sobrepaso del sistema.}
+\label{fig:f_maximosobrepaso}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/f_tiempoestablecimientofuelcell.png}
+    \caption{Tiempo de establecimiento de la celda de combustible.}
+    \label{fig:f_tiempoestablecimientofuelcell}
+\end{figure}
+
+%==================================== g) ====================================
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/g_volt1.98-2.1.png}
+    \caption{Voltaje entre 1.98 y 2.1 segundos.}
+    \label{fig:g_volt1.98-2.1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/g_volt4.98-5.1.png}
+    \caption{Voltaje entre 4.98 y 5.1 segundos.}
+    \label{fig:g_volt4.98-5.1}
+\end{figure}
+
+%==================================== h) ====================================
+\subsection{\textit{Sistema sin Anti-Winding Up}}
+%==================================== h) ====================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/h_corrientes.png}
+    \caption{Corrientes del sistema en otra condición.}
+    \label{fig:h_corrientes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/h_voltajes.png}
+    \caption{Voltajes del sistema en otra condición.}
+    \label{fig:h_voltajes}
+\end{figure}
+
+%==================================== i) ====================================
+\subsection{\textit{Sistema con feedforward}}
+%==================================== i) ====================================
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/i_corrientes_conAWU.png}
+    \caption{Corrientes con Anti-WindUp.}
+    \label{fig:i_corrientes_conAWU}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/i_corrientes_sinAWU.png}
+    \caption{Corrientes sin Anti-WindUp.}
+    \label{fig:i_corrientes_sinAWU}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/i_voltajes_conAWU.png}
+    \caption{Voltajes con Anti-WindUp.}
+    \label{fig:i_voltajes_conAWU}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{img/simulación/i_voltajes_sinAWU.png}
+    \caption{Voltajes sin Anti-WindUp.}
+    \label{fig:i_voltajes_sinAWU}
+\end{figure}
+
+\newpage
