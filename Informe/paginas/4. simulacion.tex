@@ -163,7 +163,21 @@ Luego de dicha perturbación la corriente usada por la batería converge a cero.
     \caption{Voltajes del sistema en otra condición.}
     \label{fig:h_voltajes}
 \end{figure}
+Al analizar las corrientes del sistema se observa que, en ausencia de una estrategia \textit{anti-windup}, la respuesta es considerablemente más oscilatoria 
+durante la convergencia. Esto se refleja en los valores máximos alcanzados por la corriente de la celda de 
+combustible ($I_{\text{fuel cell}}$) y, de forma análoga, en los valores 
+mínimos de la corriente de la batería ($I_{\text{battery}}$), los cuales son significativamente 
+mayores sin la implementación de \textit{anti-windup}. Además, las oscilaciones de corriente 
+al inicio de la simulación son notablemente más intensas cuando no se emplea esta técnica.
 
+Este comportamiento es coherente con la teoría: sin 
+\textit{anti-windup}, la planta no puede seguir fielmente la señal de control debido a las limitaciones
+ físicas del actuador. Esto provoca un aumento en el error entre la referencia y la salida, 
+ lo que impide al controlador reducir dicho error de manera eficiente e incluso, en ciertos casos, eliminarlo por completo.
+
+En cuanto a las señales de voltaje, se observa un fenómeno similar. 
+Específicamente, el voltaje de la celda de combustible presenta una 
+caída más pronunciada cuando no se considera el uso de \textit{anti-windup}.
 %==================================== i) ====================================
 \subsection{\textit{Sistema con feedforward}}
 %==================================== i) ====================================
