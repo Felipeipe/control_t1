@@ -163,8 +163,9 @@ Luego de dicha perturbación la corriente usada por la batería converge a cero.
     \caption{Voltajes del sistema en otra condición.}
     \label{fig:h_voltajes}
 \end{figure}
-Al analizar las corrientes del sistema se observa que, en ausencia de una estrategia \textit{anti-windup}, la respuesta es considerablemente más oscilatoria 
-durante la convergencia. Esto se refleja en los valores máximos alcanzados por la corriente de la celda de 
+Al analizar las corrientes del sistema se observa que, en ausencia de una estrategia 
+\textit{anti-windup}, la respuesta es inestable cuando la resistencia de carga es desconectada.
+Esto se refleja en los valores máximos alcanzados por la corriente de la celda de 
 combustible ($I_{\text{fuel cell}}$) y, de forma análoga, en los valores 
 mínimos de la corriente de la batería ($I_{\text{battery}}$), los cuales son significativamente 
 mayores sin la implementación de \textit{anti-windup}. Además, las oscilaciones de corriente 
@@ -172,12 +173,13 @@ al inicio de la simulación son notablemente más intensas cuando no se emplea e
 
 Este comportamiento es coherente con la teoría: sin 
 \textit{anti-windup}, la planta no puede seguir fielmente la señal de control debido a las limitaciones
- físicas del actuador. Esto provoca un aumento en el error entre la referencia y la salida, 
- lo que impide al controlador reducir dicho error de manera eficiente e incluso, en ciertos casos, eliminarlo por completo.
+físicas del actuador. Esto provoca un aumento en el error entre la referencia y la salida, 
+lo que impide al controlador reducir dicho error.
 
 En cuanto a las señales de voltaje, se observa un fenómeno similar. 
 Específicamente, el voltaje de la celda de combustible presenta una 
-caída más pronunciada cuando no se considera el uso de \textit{anti-windup}.
+caída más pronunciada cuando no se considera el uso de \textit{anti-windup}. Es posible concluir que, por la respuesta
+de la planta, el sistema de control no funciona.
 %==================================== i) ====================================
 \subsection{\textit{Sistema con feedforward}}
 %==================================== i) ====================================
@@ -195,6 +197,19 @@ caída más pronunciada cuando no se considera el uso de \textit{anti-windup}.
     \caption{Corrientes sin Anti-WindUp.}
     \label{fig:i_corrientes_sinAWU}
 \end{figure}
+
+A la hora de la implementación del \textit{feedforward}, se decidió 
+analizar el impacto que tiene el \textit{Anti-Windup} en la estrategia de prealimentación.
+La diferencia principal se nota en la mejora de las señales de control y la reducción de los sobrepasos de la 
+variable controlada. En otras palabras, los actuadores permanecen menos tiempo en la zona de saturación.
+Al observar las figuras \ref{fig:i_corrientes_conAWU} y \ref{fig:i_corrientes_sinAWU}
+se puede notar que cuando ocurren los eventos de cambio de resistencia $R_L$ las señales de control
+tienen sobrepasos mayores cuando el AWU no se encuentra implementado. 
+
+Cuando el sistema carece de AWU el comportamiento dinámico 
+muestra una diferencia significativa. Esta diferencia se nota principalmente observando las 
+figuras \ref{fig:i_corrientes_sinAWU} y \ref{fig:h_corrientes}.
+La distinción de dichas respuestas en principio se nota en la estabilidad de cada sistema. 
 
 \begin{figure}[H]
     \centering
