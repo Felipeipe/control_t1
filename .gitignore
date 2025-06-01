@@ -59,7 +59,7 @@ octave-workspace
 *.xdy
 *.xml
 *blx.bib
-
+*.slxc
 # --- Xournal ---
 *.xopp
 *.autosave.xopp

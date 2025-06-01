@@ -230,8 +230,19 @@ tienen sobrepasos mayores cuando el AWU no se encuentra implementado.
 
 Cuando el sistema carece de AWU el comportamiento dinámico 
 muestra una diferencia significativa. Esta diferencia se nota principalmente observando las 
-figuras (\ref{fig:i_corrientes_sinAWU}) y (\ref{fig:h_corrientes}).
-La distinción de dichas respuestas en principio se nota en la estabilidad de cada sistema. 
+figuras (\ref{fig:h_corrientes}) y (\ref{fig:i_corrientes_sinAWU}).
+La distinción de dichas respuestas en principio se nota en la estabilidad de cada sistema. Analizando por el lado de los
+voltajes máximos y mínimos de la carga se alcanza voltajes hasta 600 [V] máx. y -600 [V] min. Esto es inaceptable
+para ser implentado dentro del sistema. Por otro lado, los \textit{peaks} cuando el sistema tiene \textit{feedforward}
+implementado son de 400 [V] como máximo y solo cuando se inicializa el sistema. Mientras se encuentra en funcionamiento
+hay peaks de $\pm 10 [V]$ en torno al punto de operación, el cual es 250 [V].
+
+Al analizar la corriente suministrada por la batería, en el sistema sin AWU ni \textit{feedforward}, esta alcanza sus
+valores de saturación entre 100 y -100 [A]. Por el lado del sistema con prealimentación pero sin AWU, la corriente máxima
+tambien es de 120 [A], pero con la diferencia que, similar al voltaje en la carga, se alcanza este valor solamente en
+la inicialización del sistema. Luego durante la operación hay maximos de hasta 50 [A] y un minimo de -120, pero solo de forma 
+transiente cuando ocurre la desconexión de la carga.
+
 
 \begin{figure}[H]
     \centering
