@@ -100,14 +100,14 @@ desconecta la carga.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/f_corriente_1.98-2.1.png}
-    \caption{Corriente entre 1.98 y 2.1 segundos.}
+    \caption{Corriente entre 2.08 y 2.2 segundos.}
     \label{fig:f_corriente_1.98-2.1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/f_corriente_4.98-5.1.png}
-    \caption{Corriente entre 4.98 y 5.1 segundos.}
+    \caption{Corriente entre 5.08 y 5.2 segundos.}
 \label{fig:f_corriente_4.98-5.1}
 \end{figure}
 
@@ -136,22 +136,37 @@ pasados unos 0.2 segundos.
     \label{fig:f_tiempoestablecimientofuelcell}
 \end{figure}
 
-%==================================== g) ====================================
+Utilizando la ecuación del tiempo de establecimiento al 2\% se obtiene que debería ser de unos
+1.1 segundos para el lazo de la celda de combustible ($\frac{4}{4\cdot0.9}$), lo que cohincide con la simulación
+como se puede observar en la figura (\ref{fig:f_tiempoestablecimientofuelcell}), ya que entre 
+2.1 y 3.1 segundos, la corriente de la celda de combustible esta a menos de un 2\% de la corriente de la 
+carga, que recordemos es la referencia de este controlador.
 
+%==================================== g) ====================================
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/g_volt1.98-2.1.png}
-    \caption{Voltaje entre 1.98 y 2.1 segundos.}
+    \caption{Voltaje entre 2.08 y 2.2 segundos.}
     \label{fig:g_volt1.98-2.1}
 \end{figure}
+
+Se puede observar en la figura (\ref{fig:g_volt1.98-2.1}) que el voltaje de la celda de 
+combustible se satura apenas ocurre el cambio en la carga. Además el voltaje de la carga
+vulve a estar en 250 [V] entre los 2.1 y 2.14 segundos, que cohincide con el tiempo de
+establecimiento al 2\%, que es de 0.036 segundos aproximadamente ($\frac{4}{140\cdot0.8}$).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/g_volt4.98-5.1.png}
-    \caption{Voltaje entre 4.98 y 5.1 segundos.}
+    \caption{Voltaje entre 5.08 y 5.2 segundos.}
     \label{fig:g_volt4.98-5.1}
 \end{figure}
+
+Por otro lado en la figura (\ref{fig:g_volt4.98-5.1}) se puede notar que la tensión de la 
+celda de combustible se pega en 0 [V] apenas se desconecta la carga, el voltaje de la batería
+se satura en -400 y 400 [V] en unas oscilaciones bruscas, pero que finalmente el sistema
+control converge, dejando a la carga con 250 [V].
 
 %==================================== h) ====================================
 \subsection{\textit{Sistema sin Anti-Winding Up}}
@@ -209,13 +224,13 @@ A la hora de la implementación del \textit{feedforward}, se decidió
 analizar el impacto que tiene el \textit{Anti-Windup} en la estrategia de prealimentación.
 La diferencia principal se nota en la mejora de las señales de control y la reducción de los sobrepasos de la 
 variable controlada. En otras palabras, los actuadores permanecen menos tiempo en la zona de saturación.
-Al observar las figuras \ref{fig:i_corrientes_conAWU} y \ref{fig:i_corrientes_sinAWU}
+Al observar las figuras (\ref{fig:i_corrientes_conAWU}) y (\ref{fig:i_corrientes_sinAWU})
 se puede notar que cuando ocurren los eventos de cambio de resistencia $R_L$ las señales de control
 tienen sobrepasos mayores cuando el AWU no se encuentra implementado. 
 
 Cuando el sistema carece de AWU el comportamiento dinámico 
 muestra una diferencia significativa. Esta diferencia se nota principalmente observando las 
-figuras \ref{fig:i_corrientes_sinAWU} y \ref{fig:h_corrientes}.
+figuras (\ref{fig:i_corrientes_sinAWU}) y (\ref{fig:h_corrientes}).
 La distinción de dichas respuestas en principio se nota en la estabilidad de cada sistema. 
 
 \begin{figure}[H]
