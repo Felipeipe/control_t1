@@ -115,12 +115,19 @@ Se puede notar que la batería no suministraba corriente antes de la perturbaci�
 Después de ocurrir el cambio de resistencia $R_L$ las corrientes de la \textit{fuel cell} y de
 la batería aumentan para poder compensar con la caida de tensión que inevitablemente ocurre. 
 Luego de dicha perturbación la corriente usada por la batería converge a cero. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{img/simulación/f_maximosobrepaso.png}
     \caption{Máximo sobrepaso del sistema.}
 \label{fig:f_maximosobrepaso}
 \end{figure}
+
+El voltaje de la carga más alto se alcanza cuando se desconecta la carga, como se puede observar 
+en la figura (\ref{fig:f_maximosobrepaso}), llega hasta unos 340 [V] aproximadamente
+que equivale a un sobre paso de 36\% ($\frac{340-250}{250} \cdot 100$). Y seguido de eso alcanza 
+también su valor mínimo cerca de los 170 [V], pero vuelve a estar aproximadamente en 250 [V]
+pasados unos 0.2 segundos.
 
 \begin{figure}[H]
     \centering
