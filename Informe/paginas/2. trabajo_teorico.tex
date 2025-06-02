@@ -1,8 +1,9 @@
 \section{Trabajo Teórico}
 
 \subsection{\textit{Derivación del sistema de control}}
-
-En primer lugar para estudiar el sistema MIMO de la figura \ref{fig:circuito}, se aplicó la ley de voltaje de Kirchhoff en el nodo que esta arriba del condensador C$_{\text{L}}$, obteniéndose la siguiente ecuación,
+En primer lugar para estudiar el sistema MIMO de la figura \ref{fig:circuito}, se aplicó 
+la ley de voltaje de Kirchhoff en el nodo que esta arriba del condensador C$_{\text{L}}$, 
+obteniéndose la siguiente ecuación,
 
 \begin{equation}
     i_{\text{FC}} + i_{\text{B}} = i_{\text{L}} + i_{\text{CL}}
@@ -27,21 +28,26 @@ Y si despejamos la variable a controlar, V$_{\text{CL}}$, se llega a,
     \label{eq:lazoext}
 \end{equation}
 
-Por tanto notar que por (\ref{eq:lazoext}), es posible controlar el voltaje de la carga con las corrientes I$_{\text{FC}}$ e I$_{\text{B}}$.
+Por tanto notar que por (\ref{eq:lazoext}), es posible controlar el voltaje de la carga 
+con las corrientes I$_{\text{FC}}$ e I$_{\text{B}}$.
 
-Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 140 rad/s vs 4 rad/s, se estudiarán por separado. La planta de las celdas de combustible (Fuel Cell) queda de la siguiente forma.
-
-\begin{center}
-\begin{tikzpicture}
-	% Paths, nodes and wires:
-	\draw (0, 3) to[battery, l={$V_{FC}$}, label distance=0.02cm] (0, 0);
-	\draw (0, 3) to[american inductor, l={$L_{FC}$}, label distance=0.02cm] (3, 3);
-	\draw (3, 3) to[american resistor, l={$R_{FC}$}, label distance=0.02cm] (6, 3);
-	\draw (6, 0) to[capacitor, l={$C_L$}, label distance=0.02cm, v=$V_{CL}$] (6, 3);
-	\draw (0, 0) -- (6, 0);
-	\draw node[vcc, rotate=-90] (N1) at (2.75, 3) {} node[anchor=south east] at ([xshift=0cm, yshift=-0.62cm]N1.text){$I_{FC}$};
-\end{tikzpicture}
-\end{center}
+Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 140 rad/s vs 4 rad/s,
+se estudiarán por separado. La planta de las celdas de combustible (Fuel Cell) queda de la siguiente 
+forma.
+\begin{figure}[H] % puedes usar [H] con \usepackage{float} si quieres que no se mueva
+    \centering
+    \begin{tikzpicture}
+        % Paths, nodes and wires:
+        \draw (0, 3) to[battery, l={$V_{FC}$}, label distance=0.02cm] (0, 0);
+        \draw (0, 3) to[american inductor, l={$L_{FC}$}, label distance=0.02cm] (3, 3);
+        \draw (3, 3) to[american resistor, l={$R_{FC}$}, label distance=0.02cm] (6, 3);
+        \draw (6, 0) to[capacitor, l={$C_L$}, label distance=0.02cm, v=$V_{CL}$] (6, 3);
+        \draw (0, 0) -- (6, 0);
+        \draw node[vcc, rotate=-90] (N1) at (2.75, 3) {} node[anchor=south east] at ([xshift=0cm, yshift=-0.62cm]N1.text){$I_{FC}$};
+    \end{tikzpicture}
+    \caption{Planta Celda de combustible}
+    \label{circ:planta_fc}
+\end{figure}
 
 % \begin{center}
 % \begin{tikzpicture}
@@ -85,8 +91,9 @@ Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 14
 
 Y la planta de las baterías,
 
-\begin{center}
-\begin{tikzpicture}
+\begin{figure}[H] % puedes usar [H] con \usepackage{float} si quieres que no se mueva
+    \centering
+    \begin{tikzpicture}
 	% Paths, nodes and wires:
 	\draw node[vcc, rotate=-90, yscale=-1] (N1) at (3.25, 3) {} node[anchor=south east] at ([xshift=0.62cm, yshift=-0.62cm]N1.text){$I_{B}$};
 	\node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=-0.035cm, minimum height=-0.035cm] at (7, 1.5){};
@@ -94,10 +101,11 @@ Y la planta de las baterías,
 	\draw (6, 3) to[american resistor, l_={$R_{B}$}, label distance=0.02cm, mirror] (3, 3);
 	\draw (6, 3) to[battery, l={$V_{B}$}, label distance=0.02cm] (6, -0);
 	\draw (0, 0) to[capacitor,v=$V_{CL}$, l={$C_{L}$}, label distance=0.02cm] (0, 3);
-	\draw (0, 0) -- (6, 0);
-\end{tikzpicture}
-\end{center}
-
+    \draw (0, 0) -- (6, 0);
+    \end{tikzpicture}
+    \caption{Planta de las baterías}
+    \label{circ:planta_b}
+\end{figure}
 Luego las ecuaciones que rigen ambos circuitos usando LVK son (\ref{ecuacion batería}) para la batería y (\ref{ecuacion Fuel Cell}) para la fuel cell,
 
 \begin{equation}\label{ecuacion batería}

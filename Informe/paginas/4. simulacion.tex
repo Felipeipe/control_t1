@@ -1,5 +1,7 @@
 \section{Simulación}
-A continuación se mostrarán las diferentes simulaciones propuestas por el enunciado, junto con el análisis de los resultados obtenidos. Es importante mencionar que la simulación se retrasó en 100 [ms] respecto a los tiempos que se solicitaron. Esto fue decidido para que la simulación alcance el estado estacionario antes de que comiencen las perturbaciones.
+A continuación se mostrarán las diferentes simulaciones propuestas por el enunciado, junto con el análisis de los resultados obtenidos.
+Es importante mencionar que la simulación se retrasó en 100 [ms] respecto a los tiempos que se solicitaron.
+Esto fue decidido para que la simulación alcance el estado estacionario antes de que comiencen las perturbaciones.
 
 En todas las figuras que se mostrarán a continuación, las lineas en \textcolor{blue}{azul}
 corresponden a la celda de combustible, en \textcolor{yellow}{amarillo} la
@@ -30,6 +32,16 @@ $8 \leq t < 12$ (seg.) & La carga se desconecta, $R_L \rightarrow \infty$ \\
 \caption{Variación de la resistencia de carga durante la simulación.}
 \label{tab:e}
 \end{table}
+
+Para poder modelar los cambios en la resistencia de carga, se implementa un subsistema que
+usa funciones escalon desfasados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{img/simulación/R_l.jpeg}
+    \caption{Resistencia en la carga}
+    \label{fig:R_l}
+\end{figure}
 
 Se puede observar en la figura (\ref{fig:e_corrientes}) como el sistema reacciona
 frente a los cambios en la carga, en los segundos 2, 5 y 8 aproximadamente.
