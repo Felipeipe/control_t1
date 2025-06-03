@@ -2,25 +2,27 @@
 
 \subsection{\textit{Derivación del sistema de control}}
 
-En primer lugar para estudiar el sistema MIMO de la figura \ref{fig:circuito}, se aplicó la ley de voltaje de Kirchhoff en el nodo que esta arriba del condensador C$_{\text{L}}$, obteniéndose la siguiente ecuación,
+En primer lugar para estudiar el sistema MIMO de la figura \ref{fig:circuito}, se aplicó 
+la ley de voltaje de Kirchhoff en el nodo que esta arriba del condensador C$_{\text{L}}$, 
+obteniéndose la siguiente ecuación,
 
 \begin{equation}
     i_{\text{FC}} + i_{\text{B}} = i_{\text{L}} + i_{\text{CL}}
 \end{equation}
 
-Luego utilizando ley de Ohm se puede llegar a la expresión,
+Luego utilizando ley de Ohm se puede llegar a la expresión:
 
 \begin{equation}
     i_{\text{FC}} + i_{\text{B}} = \frac{v_{\text{CL}}}{R_{\text{L}}} + C_{L}\frac{dv_{\text{CL}}}{dt}
 \end{equation}
 
-Que en el dominio de la frecuencia equivale a,
+Que en el dominio de la frecuencia equivale a:
 
 \begin{equation}
     I_{\text{FC}} + I_{\text{B}} = \frac{V_{\text{CL}}}{R_{\text{L}}} + sC_{L}V_{\text{CL}}
 \end{equation}
 
-Y si despejamos la variable a controlar, V$_{\text{CL}}$, se llega a,
+Y si despejamos la variable a controlar, V$_{\text{CL}}$, se llega a
 
 \begin{equation}
     V_{\text{CL}} = \frac{R_{\text{L}}}{1+sC_{\text{L}}R_{\text{L}}}(I_{\text{FC}}+I_{\text{B}})
@@ -29,7 +31,9 @@ Y si despejamos la variable a controlar, V$_{\text{CL}}$, se llega a,
 
 Por tanto notar que por (\ref{eq:lazoext}), es posible controlar el voltaje de la carga con las corrientes I$_{\text{FC}}$ e I$_{\text{B}}$.
 
-Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 140 rad/s vs 4 rad/s, se estudiarán por separado. La planta de las celdas de combustible (Fuel Cell) queda de la siguiente forma.
+Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 140 rad/s vs 4 rad/s,
+se estudiarán por separado. La planta de las celdas de combustible (Fuel Cell) queda de la siguiente
+forma.
 
 \begin{center}
 \begin{tikzpicture}
@@ -42,46 +46,6 @@ Ahora bien, dado que los sistemas operan en velocidades sumamente diferentes, 14
 	\draw node[vcc, rotate=-90] (N1) at (2.75, 3) {} node[anchor=south east] at ([xshift=0cm, yshift=-0.62cm]N1.text){$I_{FC}$};
 \end{tikzpicture}
 \end{center}
-
-% \begin{center}
-% \begin{tikzpicture}
-% 	% Paths, nodes and wires:
-% 	\draw (0, 3) to[battery, l={$V_{FC}$}, label distance=0.02cm] (0, 0);
-% 	\draw (0, 3) to[american inductor, l={$L_{FC}$}, label distance=0.02cm] (3, 3);
-% 	\draw (3, 3) to[american resistor, l={$R_{FC}$}, label distance=0.02cm] (6, 3);
-% 	\draw (6, 3) to[capacitor, l_={$C_L                   $}, label distance=0.02cm] (6, -0);
-% 	\draw (0, -0) -- (6, -0);
-% 	\draw node[vcc, rotate=-90] (N1) at (2.75, 3) {} node[anchor=south east] at ([xshift=0.62cm, yshift=-0.62cm]N1.text){$I_{FC}$};
-% 	\draw (7, 2.75) -| (7, 2.25) |- (6.75, 2.5) -- (7.25, 2.5);
-% 	\draw (6.75, 0.5) -- (7.25, 0.5);
-% 	\node[shape=rectangle, inner sep=0, minimum width=0.465cm, minimum height=0.465cm](Rect1) at (7, 1.5){} node[anchor=center] at (Rect1.center){$V_{CL}$};
-% 	\node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=-0.035cm, minimum height=-0.035cm] at (7, 1.5){};
-% 	\node[shape=circle, draw, line width=1pt, inner sep=0, minimum width=0.298cm] at (7, 3){};
-% 	\node[shape=circle, draw, line width=1pt, inner sep=0, minimum width=0.298cm] at (7, -0){};
-% 	\draw (6, -0) -- (6.833, -0);
-% 	\draw (6, 3) -- (6.833, 3);
-% \end{tikzpicture}
-% \end{center}
-
-% \begin{center}
-% \begin{tikzpicture}
-% 	% Paths, nodes and wires:
-% 	\draw (1, 3) to[capacitor, l={$C_L$}, label distance=0.02cm, mirror] (1, -0);
-% 	\draw (7, 0) -| (1, -0);
-% 	\draw node[vcc, rotate=-90, yscale=-1] (N1) at (4.25, 3) {} node[anchor=south east] at ([xshift=0.62cm, yshift=-0.62cm]N1.text){$I_{B}$};
-% 	\draw (-0, 2.75) -| (-0, 2.25) |- (0.25, 2.5) -- (-0.25, 2.5);
-% 	\draw (0.25, 0.5) -- (-0.25, 0.5);
-% 	\node[shape=rectangle, inner sep=0, minimum width=0.465cm, minimum height=0.465cm, rotate=-180](Rect1) at (-0, 1.5){} node[anchor=center] at (Rect1.center){$V_{CL}$};
-% 	\node[shape=rectangle, draw, line width=1pt, inner sep=0, minimum width=-0.035cm, minimum height=-0.035cm] at (7, 1.5){};
-% 	\node[shape=circle, draw, line width=1pt, inner sep=0, minimum width=0.298cm, rotate=-180] at (-0, 3){};
-% 	\node[shape=circle, draw, line width=1pt, inner sep=0, minimum width=0.298cm, rotate=-180] at (-0, -0){};
-% 	\draw (1, 0) -| (0.167, -0);
-% 	\draw (1, 3) -- (0.167, 3);
-% 	\draw (4, 3) to[american inductor, l_={$L_{B}$}, label distance=0.02cm, mirror] (1, 3);
-% 	\draw (7, 3) to[american resistor, l_={$R_{B}$}, label distance=0.02cm, mirror] (4, 3);
-% 	\draw (7, 3) to[battery, l={$V_{B}$}, label distance=0.02cm] (7, -0);
-% \end{tikzpicture}
-% \end{center}
 
 Y la planta de las baterías,
 

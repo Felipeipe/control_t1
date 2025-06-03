@@ -1,7 +1,7 @@
 \section{Simulación}
 A continuación se mostrarán las diferentes simulaciones propuestas por el enunciado, junto con el análisis de los resultados obtenidos. Es importante mencionar que la simulación se retrasó en 100 [ms] respecto a los tiempos que se solicitaron. Esto fue decidido para que la simulación alcance el estado estacionario antes de que comiencen las perturbaciones.
 
-En todas las figuras que se mostrarán a continuación, las lineas en \textcolor{blue}{azul}
+En todas las figuras que se mostrarán a continuación, las líneas en \textcolor{blue}{azul}
 corresponden a la celda de combustible, en \textcolor{yellow}{amarillo} la
 batería y la carga en \textcolor{orange}{naranjo}.
 
@@ -35,8 +35,8 @@ Se puede observar en la figura (\ref{fig:e_corrientes}) como el sistema reaccion
 frente a los cambios en la carga, en los segundos 2, 5 y 8 aproximadamente.
 Además es posible notar que la batería responde más rápido frente a perturbaciones,
 lo que coincide con la teoría de control, dado que es el controlador con la
-frecuencia natural más alta, 1400 [rad/s]. También, se puede obsevar como la corriente de la celda de combustible
-sigue la corriente de carga, sin embargo es muchisimo más lento que la batería, 4 [rad/s]. Por otro lado,
+frecuencia natural más alta, 1400 [rad/s]. También, se puede observar como la corriente de la celda de combustible
+sigue la corriente de carga, sin embargo es muchísimo más lento que la batería, 4 [rad/s]. Por otro lado,
 al momento de la desconexión de la carga se puede observar una saturación de corriente por parte
 de la batería, dado que intenta compensar la corriente que sigue entregando la celda de combustible.
 
@@ -52,7 +52,7 @@ en el sistema. Es posible notar que la carga se encuentra prácticamente en
 los 250 [V] durante toda la simulación por lo que el sistema MIMO cumple con 
 su propósito. Por otro lado dado que los voltajes tanto de la celda de 
 combustible y la batería son actuadores estos cambian de manera prácticamente
-instantanea frente a los cambios producidos en la carga, pero es posible notar
+instantánea frente a los cambios producidos en la carga, pero es posible notar
 que la celda de combustible se satura en 450 [V].
 
 \begin{figure}[H]
@@ -113,7 +113,7 @@ desconecta la carga.
 
 Se puede notar que la batería no suministraba corriente antes de la perturbación. 
 Después de ocurrir el cambio de resistencia $R_L$ las corrientes de la \textit{fuel cell} y de
-la batería aumentan para poder compensar con la caida de tensión que inevitablemente ocurre. 
+la batería aumentan para poder compensar con la caída de tensión que inevitablemente ocurre. 
 Luego de dicha perturbación la corriente usada por la batería converge a cero. 
 
 \begin{figure}[H]
@@ -137,7 +137,7 @@ pasados unos 0.2 segundos.
 \end{figure}
 
 Utilizando la ecuación del tiempo de establecimiento al 2\% se obtiene que debería ser de unos
-1.1 segundos para el lazo de la celda de combustible ($\frac{4}{4\cdot0.9}$), lo que cohincide con la simulación
+1.1 segundos para el lazo de la celda de combustible ($\frac{4}{4\cdot0.9}$), lo que coincide con la simulación
 como se puede observar en la figura (\ref{fig:f_tiempoestablecimientofuelcell}), ya que entre 
 2.1 y 3.1 segundos, la corriente de la celda de combustible esta a menos de un 2\% de la corriente de la 
 carga, que recordemos es la referencia de este controlador.
@@ -153,7 +153,7 @@ carga, que recordemos es la referencia de este controlador.
 
 Se puede observar en la figura (\ref{fig:g_volt1.98-2.1}) que el voltaje de la celda de 
 combustible se satura apenas ocurre el cambio en la carga. Además el voltaje de la carga
-vulve a estar en 250 [V] entre los 2.1 y 2.14 segundos, que cohincide con el tiempo de
+vuelve a estar en 250 [V] entre los 2.1 y 2.14 segundos, que coincide con el tiempo de
 establecimiento al 2\%, que es de 0.036 segundos aproximadamente ($\frac{4}{140\cdot0.8}$).
 
 \begin{figure}[H]
@@ -233,14 +233,14 @@ muestra una diferencia significativa. Esta diferencia se nota principalmente obs
 figuras (\ref{fig:h_corrientes}) y (\ref{fig:i_corrientes_sinAWU}).
 La distinción de dichas respuestas en principio se nota en la estabilidad de cada sistema. Analizando por el lado de los
 voltajes máximos y mínimos de la carga se alcanza voltajes hasta 600 [V] máx. y -600 [V] min. Esto es inaceptable
-para ser implentado dentro del sistema. Por otro lado, los \textit{peaks} cuando el sistema tiene \textit{feedforward}
+para ser implementado dentro del sistema. Por otro lado, los \textit{peaks} cuando el sistema tiene \textit{feedforward}
 implementado son de 400 [V] como máximo y solo cuando se inicializa el sistema. Mientras se encuentra en funcionamiento
 hay peaks de $\pm 10 [V]$ en torno al punto de operación, el cual es 250 [V].
 
 Al analizar la corriente suministrada por la batería, en el sistema sin AWU ni \textit{feedforward}, esta alcanza sus
 valores de saturación entre 100 y -100 [A]. Por el lado del sistema con prealimentación pero sin AWU, la corriente máxima
-tambien es de 120 [A], pero con la diferencia que, similar al voltaje en la carga, se alcanza este valor solamente en
-la inicialización del sistema. Luego durante la operación hay maximos de hasta 50 [A] y un minimo de -120, pero solo de forma 
+también es de 120 [A], pero con la diferencia que, similar al voltaje en la carga, se alcanza este valor solamente en
+la inicialización del sistema. Luego durante la operación hay máximos de hasta 50 [A] y un mínimo de -120, pero solo de forma 
 transiente cuando ocurre la desconexión de la carga.
 
 

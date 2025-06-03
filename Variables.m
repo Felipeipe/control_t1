@@ -13,7 +13,7 @@ den_b_int = Z_b;
 sys_b_num = 1;
 sys_b_den = [L_b R_b]; 
 sys_b_int = tf(sys_b_num, sys_b_den); % Planta de la corriente de la batería
-%rltool(sys_b_int)
+rltool(sys_b_int)
 K_battery_current = 6.415;
 zero_battery_current = 916;
 C_battery_current_num = [1 zero_battery_current];
